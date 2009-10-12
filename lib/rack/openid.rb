@@ -117,6 +117,7 @@ module Rack
           end
         end
 
+        env["rack.request.query_hash"] ||= {}
         query_hash = env["rack.request.query_hash"]
         query_hash.delete("_method")
         query_hash.delete_if do |key, value|
